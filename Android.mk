@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter merlinx lancelot,$(TARGET_DEVICE)),)
+ifneq ($(filter a32,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 VENDOR_SYMLINKS := \

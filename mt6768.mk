@@ -127,14 +127,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# Firmware
-COMMON_RECOVERY_TS_FW_PATH := vendor/xiaomi/mt6768-common/proprietary/vendor/firmware
-
-PRODUCT_COPY_FILES += \
-    $(COMMON_RECOVERY_TS_FW_PATH)/novatek_ts_fw.bin:recovery/root/vendor/firmware/novatek_ts_fw.bin \
-    $(COMMON_RECOVERY_TS_FW_PATH)/novatek_ts_mp.bin:recovery/root/vendor/firmware/novatek_ts_mp.bin \
-    $(COMMON_RECOVERY_TS_FW_PATH)/focaltech_ts_fw_xinli.bin:recovery/root/vendor/firmware/focaltech_ts_fw_xinli.bin
-
 # FM Radio
 PRODUCT_PACKAGES += \
     FMRadio
@@ -401,4 +393,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/mt6768-common/mt6768-common-vendor.mk)
+$(call inherit-product, vendor/samsung/mt6768-common/mt6768-common-vendor.mk)

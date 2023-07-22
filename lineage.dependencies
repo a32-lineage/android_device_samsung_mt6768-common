@@ -8,7 +8,7 @@
     "target_path": "hardware/mediatek"
   },
   {
-    "repository": "android_kernel_xiaomi_mt6768",
-    "target_path": "kernel/xiaomi/mt6768"
+    "repository": "android_kernel_samsung_a32",
+    "target_path": "kernel/samsung/a32"
   }
 ]
