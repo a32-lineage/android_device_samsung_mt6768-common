@@ -51,7 +51,6 @@ BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 
 # Display
@@ -67,7 +66,8 @@ BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/mt6768.cfg
 
 # DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/a32.cfg
+#BOARD_DTBO_CFG := $(COMMON_PATH)/configs/kernel/a32.cfg
+BOARD_CUSTOM_DTBOIMG_MK := $(COMMON_PATH)/configs/kernel/dtbo.mk
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
