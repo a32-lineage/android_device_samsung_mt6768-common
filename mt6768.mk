@@ -125,6 +125,7 @@ PRODUCT_PACKAGES += \
 
 # fastbootd
 PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
 # FM Radio
@@ -148,9 +149,9 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
+    android.hardware.health@2.1 \
+    android.hardware.health-service.samsung \
+    android.hardware.health-service.samsung-recovery
 
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0
