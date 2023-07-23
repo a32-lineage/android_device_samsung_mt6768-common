@@ -3,26 +3,26 @@
 /dev/block/mmcblk0boot0                                         0660    root    system
 /dev/block/mmcblk0boot1                                         0660    root    system
 /dev/misc-sd                                                    0660    root    system
-/dev/block/platform/bootdevice/by-name/misc2     0660    root    system
-/dev/block/platform/bootdevice/by-name/boot      0640    root    system
-/dev/block/platform/bootdevice/by-name/recovery  0640    root    system
-/dev/block/platform/bootdevice/by-name/secro     0640    root    system
-/dev/block/platform/bootdevice/by-name/seccfg    0660    root    system
-/dev/block/platform/bootdevice/by-name/proinfo   0660    root    system
-/dev/block/platform/bootdevice/by-name/nvram     0660    root    system
-/dev/block/platform/bootdevice/by-name/para      0660    root    system
-/dev/block/platform/bootdevice/by-name/logo      0660    root    system
-/dev/block/platform/bootdevice/by-name/frp       0660    root    system
-/dev/block/platform/bootdevice/by-name/md1img    0640    root    system
-/dev/block/platform/bootdevice/by-name/md1img_1  0640    root    system
-/dev/block/platform/bootdevice/by-name/md1img_a  0640    root    system
-/dev/block/platform/bootdevice/by-name/md1img_b  0640    root    system
-/dev/block/platform/bootdevice/by-name/md1dsp    0660    root    system
-/dev/block/platform/bootdevice/by-name/boot_para 0640    root    system
+/dev/block/by-name/misc2     0660    root    system
+/dev/block/by-name/boot      0640    root    system
+/dev/block/by-name/recovery  0640    root    system
+/dev/block/by-name/secro     0640    root    system
+/dev/block/by-name/seccfg    0660    root    system
+/dev/block/by-name/proinfo   0660    root    system
+/dev/block/by-name/nvram     0660    root    system
+/dev/block/by-name/para      0660    root    system
+/dev/block/by-name/logo      0660    root    system
+/dev/block/by-name/frp       0660    root    system
+/dev/block/by-name/md1img    0640    root    system
+/dev/block/by-name/md1img_1  0640    root    system
+/dev/block/by-name/md1img_a  0640    root    system
+/dev/block/by-name/md1img_b  0640    root    system
+/dev/block/by-name/md1dsp    0660    root    system
+/dev/block/by-name/boot_para 0640    root    system
 
 # OTP
 /dev/otp                  0660   system     system
-/dev/block/platform/bootdevice/by-name/otp       0660    root    system
+/dev/block/by-name/otp       0660    root    system
 
 # Connectivity
 /dev/stpwmt               0660   system     system
@@ -44,9 +44,10 @@
 # WIFI
 /dev/wmtWifi              0660   wifi     wifi
 /dev/fw_log_wifi          0660   wifi     wifi
+/dev/fw_log_wifi_write_log_to_file     0660    wifi    wifi
 
 # FMRadio
-/dev/fm                   0666   system     system
+/dev/fm                   0660   system     audio
 
 # NFC
 /dev/st21nfc              0660   nfc        radio
@@ -66,6 +67,13 @@
 /dev/mobicore             0600   system     system
 /dev/mobicore-user        0666   system     system
 /dev/t-base-tui           0666   system     system
+
+# TEEgris
+/dev/tzdev                0666   system	    system
+/dev/tziwsock             0666   system     system
+/dev/tziwshmem            0666   system     system
+/dev/tuihw                0660   system     system
+/dev/tzirs                0660   system     system
 
 # add the read write right of ttyUSB*
 /dev/bus/usb/*     	  0660   root       usb
@@ -95,11 +103,18 @@
 /dev/ccci3_raw_audio            0660   audio      audio
 /dev/eemcs_aud            0660   audio      audio
 /dev/irtx                 0660   system     system
+/dev/lirc*                0660   root       system
 /dev/ir-learning          0660   system     system
 # SGX device node
 /dev/pvrsrvkm             0666   root       root
 /dev/pvr_sync             0666   root       root
 
+# S-RIL
+/dev/umts_*               0660   system      radio
+/dev/cdma_*               0660   system      radio
+
+# dev ril bridge
+/dev/drb                  0660   system      radio
 
 /sys/devices/platform/leds-mt65xx/leds/green   delay_on      0664  system   system
 /sys/devices/platform/leds-mt65xx/leds/green   delay_off      0664  system   system
@@ -132,13 +147,6 @@
 /dev/touch                0660   root       system
 /dev/hotknot              0660   root       system
 
-#FPC fingerprint ufs
-/sys/bus/platform/devices/fingerprint  clk_enable 0660 system system
-/sys/bus/platform/devices/fingerprint  irq 0600 system system
-/sys/bus/platform/devices/fingerprint  hw_reset 0200 system system
-/sys/bus/platform/devices/fingerprint wakeup_enable 0600 system system
-/sys/bus/platform/devices/fingerprint  fingerdown_wait 0600 system system
-
 #hang_detect
 /dev/RT_Monitor           0660   system     system
 /dev/kick_powerkey        0660   system     system
@@ -148,3 +156,29 @@
 
 # Resume-on-Reboot
 /dev/access-kregistry     0660   system     system
+
+# Param
+/dev/block/by-name/param    0660    root    system
+
+# Sensor Hub
+/dev/shub_sensorhub        0660   system     system
+/dev/shub_data_injection   0660   system     system
+/dev/iio:device*          0660   system	    system
+/sys/devices/platform/shub/iio:device*    buffer/enable       0660    system    system
+/sys/devices/platform/shub/iio:device*    buffer/length       0660    system    system
+/sys/bus/iio/devices/iio:device*    0664   system     radio
+
+# Grip sensor
+/dev/input/event*          0660    system  input
+/sys/devices/virtual/input/input*   enable      0660    system  input
+/sys/devices/virtual/input/input*   poll_delay  0660    system  input
+
+# Google FRP solution
+/dev/block/by-name/persistent    0660    system    system
+
+# Reactivation lock
+/dev/block/by-name/steady    0660    system    system
+
+# AT+MTKEDLBK
+/dev/block/by-name/btd    0660    root    system
+
