@@ -11,8 +11,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.ago.rc",
-    src: "etc/init.ago.rc",
+    name: "fstab.mt6769t",
+    src: "etc/fstab.mt6769t",
     vendor: true,
 }
 
@@ -40,13 +40,6 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.mt6768.usb.rc",
     src: "etc/init.mt6768.usb.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.sensor_1_0.rc",
-    src: "etc/init.sensor_1_0.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
