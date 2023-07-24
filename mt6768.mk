@@ -328,6 +328,7 @@ PRODUCT_PACKAGES += \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6768.rc \
+    init.mt6769t.rc \
     init.mt6768.usb.rc \
     init.target.rc \
     ueventd.mtk.rc
