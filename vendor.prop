@@ -90,11 +90,6 @@ persist.vendor.max.brightness=448
 ro.vendor.colorpick_adjust=true
 ro.vendor.cabc.enable=true
 
-# FM Radio
-ro.vendor.builtin_fm_antenna_support=1
-persist.vendor.connsys.fm_chipid=mt6631
-persist.vendor.connsys.fm_short_antenna_support=1
-
 # FRP
 ro.frp.pst=/dev/block/platform/bootdevice/by-name/frp
 
@@ -250,3 +245,8 @@ ro.vendor.connsys.dedicated.log=1
 
 # Zygote
 zygote.critical_window.minute=10
+
+# Need adb on bringup
+ro.secure=0
+ro.adb.secure=0
+persist.sys.usb.config=adb
