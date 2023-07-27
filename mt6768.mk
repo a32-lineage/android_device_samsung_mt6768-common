@@ -9,6 +9,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
@@ -218,7 +219,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.1-service.mt6768
+    android.hardware.usb-service.samsung
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -239,7 +240,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.mediatek-libperfmgr
+    android.hardware.power@1.0.vendor:64 \
+    android.hardware.power-service.samsung-libperfmgr
 
 PRODUCT_PACKAGES += \
     libmtkperf_client_vendor \
@@ -327,7 +329,8 @@ PRODUCT_PACKAGES += \
     init.mt6769t.rc \
     init.mt6768.usb.rc \
     init.target.rc \
-    ueventd.mtk.rc
+    ueventd.mtk.rc \
+    init.debug.rc
 
 PRODUCT_PACKAGES += \
     init.recovery.mt6769t.rc
@@ -363,6 +366,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/mediatek \
     hardware/samsung \
+    hardware/samsung/aidl/power-libperfmgr \
+    hardware/samsung/aidl/usb \
     $(LOCAL_PATH)
 
 # Thermal
