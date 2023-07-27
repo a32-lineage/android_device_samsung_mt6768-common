@@ -5,6 +5,12 @@
 //
 
 prebuilt_etc {
+    name: "init.debug.rc",
+    src: "etc/init.debug.rc",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "fstab.mt6768",
     src: "etc/fstab.mt6768",
     vendor: true,
