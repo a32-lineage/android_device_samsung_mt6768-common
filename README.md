@@ -1,1 +1,1 @@
-# Common device tree for Xiaomi MT6768 devices
+# Common device tree for Samsung MT6768 devices
