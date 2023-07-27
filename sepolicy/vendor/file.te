@@ -30,3 +30,15 @@ type pps_socket, file_type;
 
 # Touchpanel
 type sysfs_touchpanel, sysfs_type, fs_type;
+
+# Carrier
+type carrier_file, file_type;
+
+# Keyrefuge
+type keyrefuge_data_file, file_type;
+
+# Omr
+type omr_file, file_type;
+
+# Spu
+type spu_file, file_type;

@@ -31,3 +31,21 @@
 
 # WiFi
 /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi@[0-9]\.[0-9]-service-lazy\.mt6768 		u:object_r:hal_wifi_default_exec:s0
+
+# Carrier
+/carrier(/.*)?                                                                                          u:object_r:carrier_file:s0
+
+# Keyrefuge
+/keyrefuge(/.*)?                                                                                        u:object_r:keyrefuge_data_file:s0
+
+# Omr
+/omr(/.*)?	                                                                                        u:object_r:omr_file:s0
+
+# Optics
+/optics(/.*)?                                                                                           u:object_r:vendor_file:s0
+
+# Prism
+/prism(/.*)?                                                                                            u:object_r:system_file:s0
+
+# Spu
+/spu(/.*)?                                                                                              u:object_r:spu_file:s0
